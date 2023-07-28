@@ -10,7 +10,7 @@ const initialState = {
   ],
 };
 
-// 3 Create context object and obtain the initialState
+// 3 Create context object and set the hook
 export const TransactionContext = createContext(initialState);
 
 // 4 Provider Component
@@ -33,7 +33,7 @@ export const GlobalProvider = ({ children }) => {
   }
 
   return (
-    <GlobalContext.Provider
+    <TransactionContext.Provider
       value={{
         transactions: state.transactions,
         deletetransacton,
@@ -41,6 +41,6 @@ export const GlobalProvider = ({ children }) => {
       }}
     >
       {children}
-    </GlobalContext.Provider>
+    </TransactionContext.Provider>
   );
 };

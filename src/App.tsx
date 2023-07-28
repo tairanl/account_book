@@ -9,7 +9,7 @@ import { GlobalProvider } from "./context/GlobalState";
 
 function App() {
   return (
-    // 5.
+    // 5. set provider
     <GlobalProvider className="app">
       <Header />
       <div className="container">
