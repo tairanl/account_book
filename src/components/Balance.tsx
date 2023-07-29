@@ -12,7 +12,7 @@ export default function Balance() {
     const totalAmounts = amounts
       .reduce((acc, item) => (acc += item), 0)
       .toFixed(2);
-    // console.log(totalAmouts);
+    // console.log(totalAmounts);
     setBalance(totalAmounts);
   }, [transactions]);
 

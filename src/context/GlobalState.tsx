@@ -15,17 +15,18 @@ export const TransactionContext = createContext(initialState);
 
 // 4 Provider Component
 export const GlobalProvider = ({ children }) => {
+  // set hook, dispatch will pass the type to AppReducer to trigger the specific function
   const [state, dispatch] = useReducer(AppReducer, initialState);
 
   // action (cases)
-  function deletetransacton(id) {
+  function deleteTransaction(id) {
     dispatch({
       type: "DELETE_TRANSACTION",
       payload: id,
     });
   }
 
-  function addTransactiuon(transaction) {
+  function addTransaction(transaction) {
     dispatch({
       type: "ADD_TRANSACTION",
       payload: transaction,
@@ -36,8 +37,8 @@ export const GlobalProvider = ({ children }) => {
     <TransactionContext.Provider
       value={{
         transactions: state.transactions,
-        deletetransacton,
-        addTransactiuon,
+        deleteTransaction,
+        addTransaction,
       }}
     >
       {children}
